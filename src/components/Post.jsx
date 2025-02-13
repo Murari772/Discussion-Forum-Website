@@ -2,11 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 function Post(props) {
-  // Function to truncate text to 20 words
-  const truncateText = (text, wordLimit) => {
+  const truncateText = (text, limit) => {
     const words = text.split(" ");
-    return words.length > wordLimit
-      ? words.slice(0, wordLimit).join(" ") + "..."
+    return words.length > limit
+      ? words.slice(0, limit).join(" ") + "..."
       : text;
   };
 

@@ -31,15 +31,14 @@ function AddPost({ onAdd }) {
 
     i = note.id+1;
     
-    if (note.title.trim() && note.content.trim()) {
-      onAdd(note);
-      setNote({
-        id : i,   
-        title: "",
-        content: "",
-        comments: []
-      });
-    }
+    onAdd(note);
+    setNote({
+      id : i,   
+      title: "",
+      content: "",
+      comments: []
+    });
+    
 
     event.preventDefault();
   }

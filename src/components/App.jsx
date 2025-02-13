@@ -4,7 +4,6 @@ import Header from "./Header";
 import Post from "./Post";
 import PostDetails from "./PostDetails";
 import posts from "../posts.json";
-import Popup from "reactjs-popup";
 import "reactjs-popup/dist/index.css"; 
 import AddPost from "./AddPost";
 
@@ -27,8 +26,10 @@ export default function App() {
           path="/"
           element={
             <div className="postgrid">
+              
               {posts.map((post) => (
                 <Post id={post.id} title={post.title} text={post.content} key={post.id} />
+                
               ))}
               {data.map((post) => (
                 <Post id={post.id} title={post.title} text={post.content} key={post.id} />

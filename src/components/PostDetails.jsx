@@ -6,7 +6,7 @@ import postsData from "../posts.json";
 function PostDetails(props) {
   const { id } = useParams();
 
-  // Initialize state from the JSON data
+  
   const [allPosts, setAllPosts] = React.useState(postsData);
   const [comment, setComment] = React.useState("");
 
@@ -23,12 +23,12 @@ function PostDetails(props) {
             : post
         );
   
-        // If post is from props.addedData, update a copy instead of mutating props
+        
         if (!updatedPosts.find((post) => post.id === Number(id))) {
           const postFromProps = props.addedData.find((post) => post.id === Number(id));
           if (postFromProps) {
             const updatedPost = { ...postFromProps, comments: [...(postFromProps.comments || []), comment] };
-            return [...updatedPosts, updatedPost]; // Return a new array
+            return [...updatedPosts, updatedPost];
           }
         }
   
