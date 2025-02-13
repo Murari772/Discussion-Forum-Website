@@ -100,7 +100,9 @@ body {
   padding: 20px;
   max-width: 1200px;
   margin: 0 auto;
+  align-items: start; /* Forces elements to align at the top */
 }
+
 
 .postcontainer {
   background-color: #1e1e1e;
