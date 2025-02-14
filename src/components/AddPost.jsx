@@ -4,43 +4,35 @@ import "reactjs-popup/dist/index.css";
 import posts from "../posts.json";
 
 function AddPost({ onAdd }) {
-
-    var i = 1;
-
-    posts.map((post) => {
-        i=i+1;
-});
-    console.log(i);
+  let i = posts.length + 1; // Set ID dynamically based on posts length
 
   const [note, setNote] = useState({
-    id : i,
+    id: i,
     title: "",
     content: "",
-    comments: []
+    comments: [],
   });
 
   function handleChange(event) {
     const { name, value } = event.target;
     setNote((prevNote) => ({
       ...prevNote,
-      [name]: value
+      [name]: value,
     }));
   }
 
-  function submitNote(event) {
-
-    i = note.id+1;
+  function submitNote(event, close) {
+    event.preventDefault();
     
     onAdd(note);
     setNote({
-      id : i,   
+      id: note.id + 1,
       title: "",
       content: "",
-      comments: []
+      comments: [],
     });
-    
 
-    event.preventDefault();
+    close(); // Close the popup
   }
 
   return (
@@ -48,42 +40,44 @@ function AddPost({ onAdd }) {
       <Popup
         trigger={<button className="addpost"></button>}
         modal
-        
         contentStyle={{
           width: "600px",
           height: "360px",
           padding: "20px",
-          
           borderRadius: "8px",
           backgroundColor: "black",
-          boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.3)"
+          boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.3)",
         }}
       >
-        <form className="popup-form" onSubmit={submitNote}>
-  <h3>Add a New Post</h3>
+        {(close) => (
+          <form className="popup-form" onSubmit={(e) => submitNote(e, close)}>
+            <h3>Add a New Post</h3>
 
-  <input
-    className="popup-input title-input"
-    type="text"
-    name="title"
-    placeholder="Enter the title"
-    onChange={handleChange}
-    value={note.title}
-    required
-  />
+            <input
+              className="popup-input title-input"
+              type="text"
+              name="title"
+              placeholder="Enter the title"
+              onChange={handleChange}
+              value={note.title}
+              required
+            />
 
-  <textarea
-    className="popup-input content-input"
-    name="content"
-    placeholder="Enter the content"
-    onChange={handleChange}
-    value={note.content}
-    rows="6"
-    required
-  />
+            <textarea
+              className="popup-input content-input"
+              name="content"
+              placeholder="Enter the content"
+              onChange={handleChange}
+              value={note.content}
+              rows="7"
+              required
+            />
 
-  <button type="submit" className="submit-button">Submit</button>
-</form>
+            <button type="submit" className="submit-button">
+              Submit
+            </button>
+          </form>
+        )}
       </Popup>
     </div>
   );

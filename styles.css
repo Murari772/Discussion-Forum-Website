@@ -235,7 +235,7 @@ h3 {
 
 .comment-action {
   display: flex;
-  justify-content: flex-end;
+  /*justify-content: flex-end;*/
   align-items: center;
   margin-top: 8px;
 }
@@ -374,6 +374,34 @@ h3 {
   text-shadow: 2px 2px 5px rgba(255, 152, 0, 0.3);
 }
 
+
+.comments {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px 10px 10px 0px;
+  max-width: 600px;
+}
+
+.comment-box {
+  background-color: #222;
+  color: #fff;
+  padding: 12px;
+  border-radius: 8px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  font-size: 14px;
+  width: 100%;
+  text-align: left; 
+  display: flex;
+  align-items: left; 
+  justify-content: flex-start; 
+}
+
+.comment-text {
+  margin: 0;
+  word-wrap: break-word;
+  padding-left: 5px; 
+}
 
 
 

@@ -65,12 +65,16 @@ function PostDetails(props) {
           </button>
           </div>
 
-          <ul>
+          <div className="comments">
             {targetPost.comments &&
-              targetPost.comments.map((cmt, index) => (
-                <li key={index}>{cmt}</li>
+              [...targetPost.comments].reverse().map((cmt, index) => (
+                <div className="comment-box" key={index}>
+                  <p className="comment-text">{cmt}</p>
+                </div>
               ))}
-          </ul>
+          </div>
+
+
         </div>
       </div>
     </div>

@@ -26,12 +26,10 @@ export default function App() {
           path="/"
           element={
             <div className="postgrid">
-              
-              {posts.map((post) => (
+              {[...data].reverse().map((post) => (
                 <Post id={post.id} title={post.title} text={post.content} key={post.id} />
-                
               ))}
-              {data.map((post) => (
+              {[...posts].reverse().map((post) => (
                 <Post id={post.id} title={post.title} text={post.content} key={post.id} />
               ))}
             </div>
