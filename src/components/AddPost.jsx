@@ -4,7 +4,7 @@ import "reactjs-popup/dist/index.css";
 import posts from "../posts.json";
 
 function AddPost({ onAdd }) {
-  let i = posts.length + 1; // Set ID dynamically based on posts length
+  let i = posts.length + 1; 
 
   const [note, setNote] = useState({
     id: i,
@@ -32,7 +32,7 @@ function AddPost({ onAdd }) {
       comments: [],
     });
 
-    close(); // Close the popup
+    close(); 
   }
 
   return (
