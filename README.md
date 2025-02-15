@@ -1,15 +1,28 @@
-# INSTRUCTIONS TO RUN
+# Discussion-Forum-Website
+This is a front-end website that manages posts with comments using react.js
 
-1. Clone the repository
-git clone https://github.com/Murari772/Discussion-Forum-Website.git
-cd my-react-app
+# Instructions To Run
 
-2. Install dependencies
-npm install
+1. **Clone the repository**
+   ```sh
+    git clone https://github.com/Murari772/Discussion-Forum-Website.git
+    cd my-react-app
 
-3. Start the Development Server
-Execute the following command to run the website locally:
-npm run dev
-The website should now be accessible at http://localhost:5173/ (default Vite port).
+2. **Install dependencies**
+    ```sh
+   npm install
+
+3. **Start the Development Server**
+    Execute the following command to run the website locally:
+   ```sh
+      npm run dev
+   
+4. **View the website**
+   The website should now be accessible at http://localhost:5173/ (default Vite port).
+
+  
+
+
+    
 
 
